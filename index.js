@@ -33,7 +33,7 @@ app.use(cors())
 //     name:"secret-name-blablabl"
 // }));
 // ahora con mongo
-app.set("trust proxy",1)
+// app.set("trust proxy",1)
 app.use(session({
     secret:process.env.SECRETSESSION,
     resave:false.valueOf,
