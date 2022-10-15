@@ -1,0 +1,17 @@
+<h1 class="text-cemter">{{user.username}}</h1>
+<p>Edita aqui tu perfil</p>
+
+<div class="my-5 text-center">
+    {{#if imagen}}
+        <img class="rounded-circle" src="/img/perfiles/{{imagen}}" alt="">
+    {{else}}
+        <img class="rounded-circle" src="/img/perfiles/perfil.jpg" alt="">
+    {{/if}}
+</div>
+{{!-- mutli para fotos. se puede de varias --}}
+{{!-- para que el scrfc sirva con imagenes --}}
+<form action="/perfil?_csrf={{csrfToken}}" method="post" enctype="multipart/form-data">
+    {{!-- <input type="hidden" name="_csrf" value="{{crsfToken}}"> --}}
+    <input type="file" class="form-control form-control-sm" id="formFileSm" name="myFile">
+    <button class="btn btn-dark">Cambiar imagen</button>
+</form>
